@@ -11,7 +11,7 @@ containing the product of the primes for the corresponding row and column.
 ### Primality Test VS. Sieve of Eratosthenes
 A naive way to check primality is trial division. For a given number n, if any factor other than 1 and the number itself exits, then this number is composite, otherwise it's prime. But this method is too slow. It requires O(sqrt(n)) operations to check one number.
 
-The Baillie–PSW primality test is a probabilistic primality testing algorithm. This method is pretty reliable. (No composite number below 264 (approximately 1.845*10**19) passes the Baillie-PSW test.[1] [BPSW]) And BPSW requires O((log n) ** 3) bit operations.[2] [TRN]
+The Baillie–PSW primality test is a probabilistic primality testing algorithm. This method is pretty reliable. (No composite number below 2 ** 64 (approximately 1.845 * 10 ** 19) passes the Baillie-PSW test.[1] [BPSW]) And BPSW requires O((log n) ** 3) bit operations.[2] [TRN]
 
 Both method above are no very good.
 
@@ -31,7 +31,7 @@ Table makes table using result PrimeNumber provides.
 
 ## TODO
 
-- [ ] The basic Sieve of Eratosthenes requires O(n) of memory. For ruby, Max Fixnum is (2**(64 - 2) -1), which is approximately 10**18. It is impossible to store all these numbers in one array. One way to tackle this problem is to split the array into several chunks, and check those chunks one by one. Another way is to try primality test, like Baillie–PSW primality test, if one care memory more than speed.
+- [ ] The basic Sieve of Eratosthenes requires O(n) of memory. For ruby, Max Fixnum is (2 ** (64 - 2) -1), which is approximately 10 ** 18. It is impossible to store all these numbers in one array. One way to tackle this problem is to split the array into several chunks, and check those chunks one by one. Another way is to try primality test, like Baillie–PSW primality test, if one care memory more than speed.
 
 - [ ] For Sieve of Eratosthenes, using wheel factorization or wheel sieve can further improve speed.
 
