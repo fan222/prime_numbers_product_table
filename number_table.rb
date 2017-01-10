@@ -8,6 +8,7 @@ class NumberTable
     @path = path
   end
 
+# for error handling, just ask user to re-run program
   def run
     puts "How many prime numbers' products table do you want to check? (default is 10)." + "\n"
     n = gets.chomp
@@ -20,6 +21,7 @@ class NumberTable
     end
   end
 
+# print table. If new prime number are computed, save them for later use.
   def print_table(n)
     prime_number = PrimeNumber.new(@path)
     prime_and_flag = prime_number.get_prime_numbers(n)
@@ -38,5 +40,3 @@ if __FILE__ == $PROGRAM_NAME
   number_table = NumberTable.new()
   number_table.run
 end
-
-# TODO: write test, aanswer fc questions, comment, update readme

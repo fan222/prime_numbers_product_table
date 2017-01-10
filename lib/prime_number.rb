@@ -5,6 +5,8 @@ class PrimeNumber
   TIMES = 45
   attr_reader :primes
 
+
+# read all prime numbers in file. This file acts like database
   def initialize(path)
     @primes = File.open(File.expand_path(path), 'r') do |f|
       f.each_line.map do |char|
@@ -13,6 +15,8 @@ class PrimeNumber
     end
   end
 
+# If required prime numbers already exist, used saved numbers.
+# Otherwise, compute them
   def get_prime_numbers(n)
     if n <= @primes.length
       [@primes[0...n], false]
@@ -22,8 +26,11 @@ class PrimeNumber
     end
   end
 
+
+# using Sieve of Eratosthenes to compute prime numbers.
+# for more detail, check https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
   def find_prime_numbers(n)
-    limit = n * 45
+    limit = n * TIMES
     numbers = Array.new(limit, true)
     primes = []
 

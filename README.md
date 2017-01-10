@@ -25,7 +25,17 @@ Why not 'cache' those numbers? Saving new primes to an array, if numbers for lat
 
 I have three class, NumberTable, PrimeNumber, Table.
 NumberTable is responsible for interacting with users in command line.
-PrimeNumber find n prime numbers and calculate their products.
+
+PrimeNumber find n prime numbers. If required prime numbers already exist, used saved numbers.Otherwise, compute them
+```ruby
+  if n <= @primes.length
+    [@primes[0...n], false]
+  else
+    diff = @primes.length
+    [find_prime_numbers(n), true, diff]
+  end
+```
+
 Table makes table using result PrimeNumber provides.
 
 

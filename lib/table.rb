@@ -28,6 +28,7 @@ class Table
     "|" + " " + "#{num}" + " " * (cell_length - 1 - num.to_s.length)
   end
 
+# using this number to dynamically determin the cell size
   def largest_number_digit
     (@primes.last ** 2).to_s.length
   end
