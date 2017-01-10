@@ -1,6 +1,6 @@
 class Table
   attr_reader :primes
-  
+
   def initialize(primes)
     @primes = primes
   end
