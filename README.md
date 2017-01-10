@@ -15,7 +15,7 @@ The Baillie–PSW primality test is a probabilistic primality testing algorithm.
 
 Both method above are no very good.
 
-The number of prime numbers below a given number n is approximately n/ln(n)[3] [NP]. In another word, to find n/ln(n) prime numbers, trial division requires O(sqrt(n) * n/ln(n)) operations. Baillie–PSW needs O(((log n) ** 3) * n/ln(n)). But Sieve of Eratosthenes only needs O(n * logn * (loglogn)). That is much faster.
+The number of prime numbers below a given number n is approximately n/ln(n)[3] [NP]. In another word, to find n/ln(n) prime numbers, trial division requires O(sqrt(n) * n) operations. Baillie–PSW needs O(((log n) ** 3) * n). But Sieve of Eratosthenes only needs O(n * (loglogn)). That is much faster.
 
 ### "Caching"?
 Based discussions above, no matter what method you use, find prime numbers are very expensive.
