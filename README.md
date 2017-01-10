@@ -6,6 +6,23 @@ Write a program that prints out a multiplication table of the first 10 prime num
 - [ ] The first row and column of the table should have the 10 primes, with each cell
 containing the product of the primes for the corresponding row and column.
 
+## How to Run it
+Clone the repo and bundle install gems
+```ruby
+  bundle install
+```
+Then, run
+```ruby
+  ruby number_table.rb
+```
+You will be ask to input how many prime numbers products table you want to make. Press **Enter** for default. Default is 10
+
+To run the tests, run
+```ruby
+  bundle exec rspec
+```
+
+
 ## Background
 
 ### Primality Test VS. Sieve of Eratosthenes
@@ -33,6 +50,25 @@ PrimeNumber find n prime numbers. If required prime numbers already exist, used 
   else
     diff = @primes.length
     [find_prime_numbers(n), true, diff]
+  end
+```
+Sieve of Eratosthenes is used to comput prime numbers.
+```ruby
+  numbers = Array.new(limit, true)
+  primes = []
+
+  (2..Math.sqrt(limit)).each do |i|
+      if numbers[i]
+        ((i**2)..limit).step(i) do |j|
+          numbers[j] = false
+        end
+      end
+  end
+
+  idx = 2
+  while primes.length < n && idx < numbers.length
+    primes.push(idx) if numbers[idx]
+    idx += 1
   end
 ```
 
